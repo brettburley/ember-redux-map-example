@@ -1,3 +1,24 @@
-<h2 id="title">Welcome to Ember</h2>
+<h2 id="title">Array Map Rendering Test</h2>
 
-{{outlet}}
+<strong>Basic #each</strong>
+{{#each users as |user|}}
+  {{user-list-item user=user}}
+{{/each}}
+
+<br>
+
+<strong>#each with key</strong>
+{{#each users key="id" as |user|}}
+  {{user-list-item user=user}}
+{{/each}}
+
+<br>
+
+<strong>#each with memoized array</strong>
+{{#each memoizedUsers as |user|}}
+  {{user-list-item user=user}}
+{{/each}}
+
+<br>
+
+<button onclick={{action 'addUser'}}>Add User</button>
